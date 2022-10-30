@@ -1,9 +1,6 @@
 package com.mycompany.propertymanagement.service;
 
 import com.mycompany.propertymanagement.dto.PropertyDTO;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.mycompany.propertymanagement.service.impl;
 
-import com.mycompany.propertymanagement.PropertyRepository;
+import com.mycompany.propertymanagement.repository.PropertyRepository;
 import com.mycompany.propertymanagement.converter.PropertyConverter;
 import com.mycompany.propertymanagement.dto.PropertyDTO;
 import com.mycompany.propertymanagement.entity.PropertyEntity;
@@ -40,8 +40,6 @@ public class PropertyServiceImpl implements PropertyService {
 
     @Override
     public List<PropertyDTO> getAllProperties() {
-        System.out.println("Inside service " + dummy);
-        System.out.println("Inside service " + dbUrl);
         List<PropertyEntity> propertyEntityList = (List<PropertyEntity>) propertyRepository.findAll();
         List<PropertyDTO> propertyDTOList = new ArrayList<>();
         for(PropertyEntity pe: propertyEntityList) {
@@ -60,8 +58,6 @@ public class PropertyServiceImpl implements PropertyService {
             PropertyEntity propertyEntity = optionalPropertyEntity.get();
             propertyEntity.setTitle(propertyDTO.getTitle());
             propertyEntity.setAddress(propertyDTO.getAddress());
-            propertyEntity.setOwnerEmail(propertyDTO.getOwnerEmail());
-            propertyEntity.setOwnerName(propertyDTO.getOwnerName());
             propertyEntity.setPrice(propertyDTO.getPrice());
             propertyEntity.setDescription(propertyDTO.getDescription());
 
